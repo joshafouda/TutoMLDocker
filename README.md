@@ -64,19 +64,19 @@ Follow these steps to execute the project:
 ### 1. Train the Model
 Run the script to train the model and save it:
 ```bash
-python3 train_model.py
+python3 scripts/train_model.py
 ```
 
 ### 2. Test Inference
 Run the inference script for single and batch predictions:
 ```bash
-python3 test_inference.py
+python3 scripts/test_inference.py
 ```
 
 ### 3. Build the Streamlit App
 Start the Streamlit app locally:
 ```bash
-streamlit run app.py
+streamlit run app/app.py
 ```
 
 ### 4. Build the Docker Image
