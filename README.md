@@ -59,6 +59,7 @@ Follow these steps to execute the project:
    ```bash
    pip install -r requirements.txt
    ```
+6. Download and Install Docker Desktop
 
 ### 1. Train the Model
 Run the script to train the model and save it:
