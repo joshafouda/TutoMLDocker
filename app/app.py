@@ -12,6 +12,7 @@
 
 # Importation des bibliothèques
 import streamlit as st
+from streamlit_player import st_player
 import pandas as pd
 import numpy as np
 import joblib
@@ -77,7 +78,46 @@ def batch_prediction(input_file):
 
 
 # Streamlit UI
-st.title("Application de Prédiction - Random Forest")
+st.set_page_config(page_title="Machine Learning avec Docker", layout="wide")
+
+# Conteneur pour aligner les éléments horizontalement
+col1, col2, col3 = st.columns([1, 4, 1])
+# Colonne gauche : Image
+with col1:
+    st.image(
+        "linkedin_profil.png",  
+        width=150,     # Ajustez la taille si nécessaire
+        use_container_width=False,
+    )
+
+# Colonne centrale : Titre
+with col2:
+    st.markdown(
+        """
+        <h1 style='text-align: center; margin-bottom: 0;'>Application de Prédiction de la qualité d'un vin - Random Forest</h1>
+        """,
+        unsafe_allow_html=True,
+    )
+
+# Colonne droite : Nom et lien LinkedIn
+with col3:
+    st.markdown(
+        """
+        <div style='text-align: right;'>
+            <a href="https://www.linkedin.com/in/josu%C3%A9-afouda/" target="_blank" style='text-decoration: none; color: #0077b5;'>
+                <strong>Josué AFOUDA</strong>
+            </a>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+# URL de la vidéo YouTube
+html_video = '''<iframe width="560" height="315" src="https://www.youtube.com/embed/ahmkUHqj-Mk?si=IPMEjmTsKzYjh9vL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'''
+
+# Affichage de la vidéo
+st_player(html_video)
+
 st.sidebar.title("Menu")
 menu = st.sidebar.radio("Choisissez une option", ["Single Prediction", "Batch Prediction"])
 
